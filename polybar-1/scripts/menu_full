@@ -1,14 +1,15 @@
 #!/bin/bash
 
 # Custom Rofi Script
+source ~/colors.sh
+BACKGROUND="$ALE_DARK_BG1"
+BACKGROUND_ALT="$ALE_DARK_BG_ALT"
+HIGHLIGHT_FOREGROUND="$ALE_FOREGROUND"
+FOREGROUND="$ALE_FOREGROUND"
 
 BORDER="#1F1F1F"
 SEPARATOR="#1F1F1F"
-FOREGROUND="#FFFFFF"
-BACKGROUND="#1F1F1F"
-BACKGROUND_ALT="#252525"
-HIGHLIGHT_BACKGROUND="#00897b"
-HIGHLIGHT_FOREGROUND="#1F1F1F"
+HIGHLIGHT_BACKGROUND="#545594"
 
 BLACK="#000000"
 WHITE="#ffffff"
@@ -34,7 +35,7 @@ LIGHT_BLUE="#039be5"
 LIGHT_GREEN="#7cb342"
 
 # Launch Rofi
-rofi -no-lazy-grab -show drun \
+rofi -no-config -no-lazy-grab -show drun \
 -display-drun "Applications :" -drun-display-format "{name}" \
 -hide-scrollbar true \
 -bw 0 \

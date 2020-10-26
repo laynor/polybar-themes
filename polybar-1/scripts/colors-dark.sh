@@ -1,21 +1,23 @@
 #!/bin/bash
 
+source ~/colors.sh
+
 ## Author : Aditya Shakya
 ## Github : adi1090x
 
 PDIR="$HOME/.config/polybar"
 LAUNCH="polybar-msg cmd restart"
  
-if  [[ $1 = "-amber" ]]; then
+if  [[ $1 = "-ale" ]]; then
 # Replacing colors
-sed -i -e 's/bg = .*/bg = #1F1F1F/g' $PDIR/config.ini
+sed -i -e "s/bg = .*/bg = ${ALE_DARK_BG1}/g" $PDIR/config.ini
 sed -i -e 's/fg = .*/fg = #FFFFFF/g' $PDIR/config.ini
 sed -i -e 's/fg-alt = .*/fg-alt = #A9ABB0/g' $PDIR/config.ini
-sed -i -e 's/acolor = .*/acolor = #ffb300/g' $PDIR/config.ini
-sed -i -e 's/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND="#ffb300"/g' $PDIR/scripts/menu
-sed -i -e 's/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND="#ffb300"/g' $PDIR/scripts/menu_full
-sed -i -e 's/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND="#ffb300"/g' $PDIR/scripts/sysmenu
-sed -i -e 's/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND="#ffb300"/g' $PDIR/scripts/color-switch.sh
+sed -i -e 's/acolor = .*/acolor = '${ALE_ACCENT}'/g' $PDIR/config.ini
+sed -i -e 's/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND="'${ALE_ACCENT}'"/g' $PDIR/scripts/menu
+sed -i -e 's/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND="'${ALE_ACCENT}'"/g' $PDIR/scripts/menu_full
+sed -i -e 's/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND="'${ALE_ACCENT}'"/g' $PDIR/scripts/sysmenu
+sed -i -e 's/HIGHLIGHT_BACKGROUND=.*/HIGHLIGHT_BACKGROUND="'${ALE_ACCENT}'"/g' $PDIR/scripts/color-switch.sh
 # Restarting polybar
 $LAUNCH &
 

@@ -4,13 +4,15 @@
 ## Github : adi1090x
 # Custom Rofi Script
 
+source ~/colors.sh
+BACKGROUND="$ALE_DARK_BG1"
+BACKGROUND_ALT="$ALE_DARK_BG_ALT"
+HIGHLIGHT_FOREGROUND="$ALE_FOREGROUND"
+FOREGROUND="$ALE_FOREGROUND"
+
 BORDER="#1F1F1F"
 SEPARATOR="#1F1F1F"
-FOREGROUND="#FFFFFF"
-BACKGROUND="#1F1F1F"
-BACKGROUND_ALT="#252525"
-HIGHLIGHT_BACKGROUND="#00897b"
-HIGHLIGHT_FOREGROUND="#1F1F1F"
+HIGHLIGHT_BACKGROUND="#545594"
 
 BLACK="#000000"
 WHITE="#ffffff"
@@ -38,14 +40,14 @@ LIGHT_GREEN="#7cb342"
 SDIR="$HOME/.config/polybar/scripts"
 
 # Launch Rofi
-MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'Style :' \
+MENU="$(rofi -no-config -no-lazy-grab -sep "|" -dmenu -i -p 'Style :' \
 -hide-scrollbar true \
 -bw 0 \
 -lines 5 \
 -line-padding 10 \
 -padding 20 \
 -width 30 \
--xoffset 68 -yoffset -70 \
+-xoffset 0 -yoffset -32 \
 -location 7 \
 -columns 2 \
 -show-icons -icon-theme "Papirus" \
@@ -55,10 +57,10 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'Style :' \
 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-active "$BACKGROUND,$MAGENTA,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
-<<< "♥ amber|♥ blue|♥ blue-grey|♥ brown|♥ cyan|♥ deep-orange|♥ deep-purple|♥ green|♥ grey|♥ indigo|♥ blue-light|♥ green-light|♥ lime|♥ orange|♥ pink|♥ purple|♥ red|♥ teal|♥ yellow|♥ amber-dark|♥ blue-dark|♥ blue-grey-dark|♥ brown-dark|♥ cyan-dark|♥ deep-orange-dark|♥ deep-purple-dark|♥ green-dark|♥ grey-dark|♥ indigo-dark|♥ blue-light-dark|♥ green-light-dark|♥ lime-dark|♥ orange-dark|♥ pink-dark|♥ purple-dark|♥ red-dark|♥ teal-dark|♥ yellow-dark")"
+<<< "♥ ale|♥ blue|♥ blue-grey|♥ brown|♥ cyan|♥ deep-orange|♥ deep-purple|♥ green|♥ grey|♥ indigo|♥ blue-light|♥ green-light|♥ lime|♥ orange|♥ pink|♥ purple|♥ red|♥ teal|♥ yellow|♥ amber-dark|♥ blue-dark|♥ blue-grey-dark|♥ brown-dark|♥ cyan-dark|♥ deep-orange-dark|♥ deep-purple-dark|♥ green-dark|♥ grey-dark|♥ indigo-dark|♥ blue-light-dark|♥ green-light-dark|♥ lime-dark|♥ orange-dark|♥ pink-dark|♥ purple-dark|♥ red-dark|♥ teal-dark|♥ yellow-dark")"
             case "$MENU" in
 				## Light Colors
-				*amber) $SDIR/colors-light.sh -amber ;;
+				*ale) $SDIR/colors-dark.sh -ale ;;
 				*blue) $SDIR/colors-light.sh -blue ;;
 				*blue-grey) $SDIR/colors-light.sh -blue-grey ;;
 				*brown) $SDIR/colors-light.sh -brown ;;
